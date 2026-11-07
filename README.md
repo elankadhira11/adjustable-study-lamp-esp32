@@ -148,3 +148,26 @@ The ESP32 displays real-time sensor readings and system information.
 - Implementing PWM-based LED brightness control.
 - Developing automatic control logic using conditional statements.
 - Monitoring hardware behaviour through Serial communication.
+
+
+## Live Simulation
+
+The project is designed and simulated using Wokwi.
+
+**Try the project here:**
+
+[Open Adjustable Study Lamp Simulation](https://wokwi.com/projects/480046299382650881)
+
+## Project Demonstration
+
+### Circuit Diagram
+
+![Complete ESP32 Circuit](circuit-diagram.png)
+
+### Key Features
+
+- Automatic ambient light detection using LDR.
+- Manual brightness adjustment using a potentiometer.
+- PWM-based LED brightness control.
+- Master ON/OFF switch.
+- Real-time sensor monitoring through Serial Monitor.
