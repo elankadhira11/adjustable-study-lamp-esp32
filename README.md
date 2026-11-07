@@ -1,6 +1,6 @@
 # Adjustable Study Lamp (ESP32 + Wokwi)
 
-An automatic study-lamp prototype built with an ESP32, an LDR light sensor, a potentiometer, a master slide switch and three LEDs. The circuit is designed for simulation in [Wokwi](https://wokwi.com/).
+An automatic study-lamp prototype built with an ESP32, an LDR light sensor, a potentiometer, a master slide switch and three LEDs. The circuit is designed for simulation in https://wokwi.com/projects/480046299382650881.
 
 ## Features
 
