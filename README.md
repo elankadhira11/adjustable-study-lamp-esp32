@@ -115,3 +115,36 @@ adjustable-study-lamp-esp32/
 ## Skills demonstrated
 
 ESP32 GPIO, ADC analog input, PWM LED brightness control, sensor-based automation, input pull-downs, circuit prototyping, Arduino C++, Wokwi simulation and Git/GitHub documentation.
+
+## Project Demonstration
+
+### Circuit Diagram
+
+![ESP32 Adjustable Study Lamp Circuit](circuit-diagram.png)
+
+### Simulation
+
+The project was designed and tested using Wokwi.
+
+**Wokwi Simulation:** [Open Live Simulation](PASTE_YOUR_WOKWI_LINK_HERE)
+
+### Serial Monitor Output
+
+The ESP32 displays real-time sensor readings and system information.
+
+**Dark Room:** The LDR detects low ambient light and the white LED operates according to the potentiometer setting.
+
+![Dark Room Output](dark-room-output.png)
+
+**Bright Room:** The system detects sufficient ambient light and switches off the white lamp LED.
+
+![Bright Room Output](bright-room-output.png)
+
+## Key Learning Outcomes
+
+- Understanding ESP32 GPIO and ADC pins.
+- Reading analog sensor values.
+- Using potentiometers for manual control.
+- Implementing PWM-based LED brightness control.
+- Developing automatic control logic using conditional statements.
+- Monitoring hardware behaviour through Serial communication.
