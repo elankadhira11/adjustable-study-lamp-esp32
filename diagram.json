@@ -1,0 +1,165 @@
+{
+  "version": 1,
+  "author": "Adjustable Study Lamp Project",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-esp32-devkit-v1",
+      "id": "esp",
+      "top": 145,
+      "left": 15,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-breadboard",
+      "id": "bb1",
+      "top": 115,
+      "left": 365,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-photoresistor-sensor",
+      "id": "ldr1",
+      "top": 5,
+      "left": 390,
+      "attrs": {
+        "lux": "50"
+      }
+    },
+    {
+      "type": "wokwi-potentiometer",
+      "id": "pot1",
+      "top": 5,
+      "left": 590,
+      "attrs": {
+        "value": "750"
+      }
+    },
+    {
+      "type": "wokwi-slide-switch",
+      "id": "sw1",
+      "top": 15,
+      "left": 125,
+      "attrs": {
+        "bounce": "0"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "lampLed",
+      "top": 350,
+      "left": 440,
+      "attrs": {
+        "color": "white",
+        "lightColor": "orange",
+        "label": "Study lamp"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "greenLed",
+      "top": 350,
+      "left": 555,
+      "attrs": {
+        "color": "green",
+        "label": "System ON"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "redLed",
+      "top": 350,
+      "left": 670,
+      "attrs": {
+        "color": "red",
+        "label": "Bright room"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "rLamp",
+      "top": 425,
+      "left": 430,
+      "rotate": 90,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "rGreen",
+      "top": 425,
+      "left": 545,
+      "rotate": 90,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "rRed",
+      "top": 425,
+      "left": 660,
+      "rotate": 90,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "rSwitch",
+      "top": 265,
+      "left": 165,
+      "rotate": 90,
+      "attrs": {
+        "value": "10000"
+      }
+    }
+  ],
+  "connections": [
+    [ "esp:3V3", "bb1:bp.1", "red", [ "h245", "v-35" ] ],
+    [ "esp:GND.1", "bb1:bn.1", "black", [ "h265", "v-15" ] ],
+
+    [ "ldr1:VCC", "bb1:bp.2", "red", [] ],
+    [ "ldr1:GND", "bb1:bn.2", "black", [] ],
+    [ "ldr1:AO", "esp:D34", "green", [ "h-45", "v170" ] ],
+
+    [ "pot1:VCC", "bb1:bp.3", "red", [] ],
+    [ "pot1:GND", "bb1:bn.3", "black", [] ],
+    [ "pot1:SIG", "esp:D35", "green", [ "h-65", "v205" ] ],
+
+    [ "sw1:1", "bb1:bp.4", "red", [ "h180", "v70" ] ],
+    [ "sw1:2", "bb1:35t.a", "green", [ "h170", "v185" ] ],
+    [ "esp:D27", "bb1:35t.c", "green", [ "h220", "v80" ] ],
+    [ "rSwitch:1", "bb1:35t.e", "green", [] ],
+    [ "rSwitch:2", "bb1:bn.4", "black", [ "v35" ] ],
+
+    [ "esp:D18", "bb1:13t.a", "green", [ "h250", "v130" ] ],
+    [ "rLamp:1", "bb1:13t.b", "green", [] ],
+    [ "rLamp:2", "bb1:14t.a", "green", [ "v18" ] ],
+    [ "lampLed:A", "bb1:14t.b", "green", [] ],
+    [ "lampLed:C", "bb1:15t.a", "black", [ "v18" ] ],
+    [ "bb1:15t.b", "bb1:bn.5", "black", [] ],
+
+    [ "esp:D26", "bb1:19t.a", "green", [ "h270", "v165" ] ],
+    [ "rGreen:1", "bb1:19t.b", "green", [] ],
+    [ "rGreen:2", "bb1:20t.a", "green", [ "v18" ] ],
+    [ "greenLed:A", "bb1:20t.b", "green", [] ],
+    [ "greenLed:C", "bb1:21t.a", "black", [ "v18" ] ],
+    [ "bb1:21t.b", "bb1:bn.6", "black", [] ],
+
+    [ "esp:D25", "bb1:25t.a", "green", [ "h290", "v200" ] ],
+    [ "rRed:1", "bb1:25t.b", "green", [] ],
+    [ "rRed:2", "bb1:26t.a", "green", [ "v18" ] ],
+    [ "redLed:A", "bb1:26t.b", "green", [] ],
+    [ "redLed:C", "bb1:27t.a", "black", [ "v18" ] ],
+    [ "bb1:27t.b", "bb1:bn.7", "black", [] ],
+
+    [ "$serialMonitor:RX", "esp:TX0", "", [] ],
+    [ "$serialMonitor:TX", "esp:RX0", "", [] ]
+  ],
+  "serialMonitor": {
+    "display": "terminal"
+  },
+  "dependencies": {}
+}
